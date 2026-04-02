@@ -18,6 +18,14 @@ function divide(a, b) {
     return a / b;
 
 }
+function pulseint(f, start, end, step=0.01){
+    let sum = 0
+    for(x = start; x < end; x += step){
+        sum += f(x) * step;
+       
+    }
+     return sum
+}
 
 function calculate(operation, a, b){
     let result;
@@ -30,6 +38,8 @@ function calculate(operation, a, b){
         result = multiply(a,b);
     }else if(operation === "division"){
        result = divide(a,b);
+    }else if(operation === "pulseint"){
+        result = pulseint(x => x * x, a,b)
     }else{
         return "invalid function"
     }
@@ -42,6 +52,13 @@ function calculate(operation, a, b){
  }
  console.log(calculate("addition", 6, 3))
  console.log(calculate("division", 9, 2))
+ console.log("pulseint", 2, 5)
+
+ 
 
  console.log(history)
 
+
+
+
+ 
